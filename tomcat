@@ -1,0 +1,22 @@
+# Tomcat auto-start
+#
+# description: Auto-starts tomcat
+# start tomcat with user: ubuntu
+# pidfile: /var/run/tomcat.pid
+
+export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
+
+case $1 in
+start)
+        start on started opendj
+        /bin/su ubuntu /opt/tomcat/bin/startup.sh
+        ;;
+stop)
+        /bin/su ubuntu /opt/tomcat/bin/shutdown.sh
+        ;;
+restart)
+        /bin/su ubuntu /opt/tomcat/bin/shutdown.sh
+        /bin/su ubuntu /opt/tomcat/bin/startup.sh
+        ;;
+esac
+exit 0
