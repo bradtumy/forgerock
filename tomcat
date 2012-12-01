@@ -4,6 +4,7 @@
 # start tomcat with user: ubuntu
 # pidfile: /var/run/tomcat.pid
 
+# change this to point to your actual java home
 export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
 
 case $1 in
