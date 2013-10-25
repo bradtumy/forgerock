@@ -1,3 +1,7 @@
+#!/bin/bash
+#OpenAM scripts
+#Authenticate a user using username and password#
+
 echo -e "Enter the Admin uid:"
 read  uid
 echo -e "Enter the Admin password:"
