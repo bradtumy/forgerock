@@ -1,24 +1,33 @@
 #!/bin/bash
 #OpenAM scripts
-#Authenticate a user using username and password#
+
+
+source settings
 
 echo -e "Enter the Admin uid:"
 read  uid
 echo -e "Enter the Admin password:"
 read -s pass
-echo -e "Enter the OpenAM Server FQDN:"
-read server
 
 echo -e "How many times should I run this update?"
 read count
 
 #Authenticate
 
-url1="$server/identity/authenticate"
-content="$(curl -s --request POST --data "username=$uid&password=$pass" $url1)"
-echo $content
+URL="$PROTOCOL://$OPENAM_SERVER:$OPENAM_SERVER_PORT/openam/identity/authenticate"
+DATA="username=$uid&password=$pass"
+
+echo ""
+
+#Get AuthN user token
+TOKEN="$(curl -s --request POST --data $DATA $URL)"
+
+# Check Entitlements
+PRIV_URL="$PROTOCOL://$OPENAM_SERVER:$OPENAM_SERVER_PORT/openam/ws/1/entitlement/privilege/URLPolicy"
+COOKIE="iPlanetDirectoryPro=${TOKEN:9}"
 
 for ((c=1; c<=$count; c++))
- do
- curl --request PUT --cookie "iPlanetDirectoryPro=AQIC5wM2LY4SfczwoxyyMIEL3e1Yby4lDijbq6t0A5VMhQ0.*AAJTSQACMDE.*" --data-urlencode "privilege.json@update.json" $server/ws/1/entitlement/privilege/URLPolicy
- done
+do
+  curl --request PUT --cookie "$COOKIE" --data-urlencode "privilege.json@update.json" "$PRIV_URL"
+  echo "$c"
+done
