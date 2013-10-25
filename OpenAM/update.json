@@ -1,0 +1,23 @@
+{
+    "name": "URLPolicy",
+    "eSubject": {
+        "state": {
+            "className": "com.sun.identity.policy.plugins.AuthenticatedUsers",
+            "exclusive": false,
+            "name": "All Authenticated Users",
+            "values": []
+        },
+        "className": "com.sun.identity.entitlement.opensso.PolicySubject"
+    },
+    "entitlement": {
+        "actionsValues": {
+            "POST": false,
+            "GET": true
+        },
+        "applicationName": "iPlanetAMWebAgentService",
+        "name": "authorize",
+        "resourceNames": [
+            "http://app2.ssobridge.com/*"
+        ]
+    }
+}
