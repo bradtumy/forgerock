@@ -38,7 +38,7 @@ then
   for ((c=1; c<=$count; c++))
   do
 	content="$(curl -s "$myUrl" )"
-        echo "$content"
+        echo "$c: $content"
   done 
 else
   echo -e "Authentication Failed"'\n'

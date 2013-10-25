@@ -1,6 +1,6 @@
 #!/bin/bash
 #OpenAM scripts
-
+# This script updates a policy based on a json file (found in the same filesystem directory
 
 source settings
 
@@ -29,5 +29,5 @@ COOKIE="iPlanetDirectoryPro=${TOKEN:9}"
 for ((c=1; c<=$count; c++))
 do
   curl --request PUT --cookie "$COOKIE" --data-urlencode "privilege.json@update.json" "$PRIV_URL"
-  echo "$c"
+  echo ": $c"
 done
