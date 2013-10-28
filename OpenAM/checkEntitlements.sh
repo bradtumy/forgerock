@@ -2,6 +2,10 @@
 # This script will authenticate a user and then check their
 # entitlements on a resource url that is provided to it.
 
+# TO DO
+# Allow the person running the script to provide a different protected
+# resource URL at runtime.
+
 #import settings
 source settings
 
