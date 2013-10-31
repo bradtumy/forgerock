@@ -5,9 +5,14 @@
 #URL Protocol of OpenAM Server (HTTP or HTTPS)
 PROTOCOL=HTTP
 
+<<<<<<< HEAD
 #FQDN
 #OPENAM_SERVER=app2.ssobridge.com
 OPENAM_SERVER=am1.ssobridge.com
+=======
+#FQDN; change this to match your OpenAM servers host name
+OPENAM_SERVER=app2.ssobridge.com
+>>>>>>> e37f9002bae167434d89d0505f88a72054605994
 
 #Server Port
 OPENAM_SERVER_PORT=8080
@@ -15,5 +20,5 @@ OPENAM_SERVER_PORT=8080
 #Returning data format. (xml or json)
 FORMAT=json   
 
-#Protected Resource (URL)
+#Protected Resource (URL); Change this to match the resource you are testing
 PROTECTED_RESOURCE="http://app2.ssobridge.com/index.html"
