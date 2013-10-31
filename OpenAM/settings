@@ -22,3 +22,6 @@ FORMAT=json
 
 #Protected Resource (URL); Change this to match the resource you are testing
 PROTECTED_RESOURCE="http://app2.ssobridge.com/index.html"
+
+#Filter
+FILTER="*.ssobridge.com"
