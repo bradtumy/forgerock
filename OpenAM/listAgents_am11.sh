@@ -9,7 +9,7 @@ echo -e "Enter the Admin password"
 read -s pass
 
 BASE_URL="$PROTOCOL://$OPENAM_SERVER:$OPENAM_SERVER_PORT/openam"
-FILTER="*.ssobridge.com"
+FILTER="$FILTER"
 
 #AUTHN the admin user
 
