@@ -6,7 +6,8 @@
 PROTOCOL=HTTP
 
 #FQDN
-OPENAM_SERVER=app2.ssobridge.com
+#OPENAM_SERVER=app2.ssobridge.com
+OPENAM_SERVER=am1.ssobridge.com
 
 #Server Port
 OPENAM_SERVER_PORT=8080
