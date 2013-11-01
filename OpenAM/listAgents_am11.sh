@@ -24,5 +24,9 @@ AUTH_TOKEN2=${AUTH_TOKEN:9}
 URL="$BASE_URL/json/agents?_queryID=$FILTER"
 #URL="$BASE_URL/identity/search" ##legacy API
 #echo "URL: " $URL
+<<<<<<< HEAD
 TOKEN="$(curl --header "iPlanetDirectoryPro: $AUTH_TOKEN2" --header "Content-Type: application/json" $URL)"
+=======
+TOKEN="$(curl -s --header "iPlanetDirectoryPro: $AUTH_TOKEN2" --header "Content-Type: application/json" $URL)"
+>>>>>>> 1b260d6b0d9d3f4030bb136158dc825d34ec1bc4
 echo $TOKEN
