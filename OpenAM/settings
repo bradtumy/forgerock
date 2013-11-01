@@ -19,4 +19,6 @@ FORMAT=json
 PROTECTED_RESOURCE="http://app2.ssobridge.com/index.html"
 
 #FILTER
+#Filter
+>>>>>>> 1b260d6b0d9d3f4030bb136158dc825d34ec1bc4
 FILTER="*.ssobridge.com"
