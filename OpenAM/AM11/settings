@@ -19,3 +19,6 @@ PROTECTED_RESOURCE="http://am1.ssobridge.com/index.html"
 
 #Filter
 FILTER="*.ssobridge.com"
+
+#JQ_LOCATION
+JQ_LOC=/opt/jq
