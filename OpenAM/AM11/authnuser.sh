@@ -5,12 +5,28 @@
 # Source the Settings file
 source settings
 
-clear # clear the screen to clean up any previous runs
-echo -e "What is the user to authenticate?"
-read USER
+# if the username & password are not provided
+# as arguments then prompt the user for them
 
-echo -e "What is the password?"
-read -s PASS
+if [[ "$1" = "" ]]; then
+  echo ""
+  echo "You did not provide a username."
+  echo ""
+  echo -e "What is the username that I should authenticate?"
+  read USER
+else 
+  USER=$1
+fi
+
+if [[ "$2" = "" ]]; then
+  echo ""
+  echo "You did not provide a password."
+  echo ""
+  echo -e "What is the password for this user?"
+  read -s PASS
+else
+  PASS=$2
+fi
 
 URL=$PROTOCOL://$OPENAM_SERVER:$OPENAM_SERVER_PORT/openam/json/authenticate?_prettyPrint=true
 echo -e "Starting Authentication"
